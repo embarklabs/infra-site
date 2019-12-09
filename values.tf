@@ -16,5 +16,11 @@ locals {
       dest = "embark.status.im",
       url  = "https://embark.status.im/",
     },
+    {
+      zone = var.zones["embarklabs.io"],
+      fqdn = "embarklabs.io",
+      dest = "embark.status.im",
+      url  = "https://embark.status.im/",
+    },
   ]
 }
