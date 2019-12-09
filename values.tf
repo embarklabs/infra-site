@@ -2,7 +2,9 @@ locals {
   dns_records = [
     /* ENS entries */
     {
-      zone = var.zones["embark.team"], type = "TXT", name = "_ens",
+      zone = var.zones["embark.team"],
+      type = "TXT",
+      name = "_ens",
       dest = "a=0x2500d3147595331F833600a04211a62eBdCDfdcb",
     },
   ]
