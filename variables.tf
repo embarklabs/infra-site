@@ -7,3 +7,7 @@ variable "cloudflare_token" {
 variable "cloudflare_email" {
   description = "Email address of Cloudflare account."
 }
+
+variable "cloudflare_account" {
+  description = "ID of Cloudflare account."
+}

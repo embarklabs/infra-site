@@ -1,9 +1,10 @@
 /* DERIVED --------------------------------------*/
 
 provider "cloudflare" {
-  version = "~> 2.0"
-  email   = var.cloudflare_email
-  api_key = var.cloudflare_token
+  version    = "~> 2.0"
+  email      = var.cloudflare_email
+  api_key    = var.cloudflare_token
+  account_id = var.cloudflare_account
 }
 
 /* CF Zones ------------------------------------*/
