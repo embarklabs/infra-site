@@ -1,4 +1,4 @@
-resource "cloudflare_record" "dns_records" {
+resource "cloudflare_record" "ens_magic" {
   zone_id = local.zones["embark.team"]
   type    = "TXT"
   name    = "_ens"
