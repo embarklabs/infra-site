@@ -21,17 +21,6 @@ locals {
   }
 }
 
-/* DNS Records ---------------------------------*/
-
-resource "cloudflare_record" "dns_records" {
-  count   = length(local.dns_records)
-  zone_id = lookup(local.dns_records[count.index], "zone")
-  value   = lookup(local.dns_records[count.index], "dest")
-  type    = lookup(local.dns_records[count.index], "type", "CNAME")
-  name    = lookup(local.dns_records[count.index], "name", "@")
-  proxied = lookup(local.dns_records[count.index], "prox", false)
-}
-
 /* Redirects -----------------------------------*/
 
 module "redirect" {
