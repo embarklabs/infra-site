@@ -20,10 +20,3 @@ locals {
       zone.name => zone.id
   }
 }
-
-/* Redirects -----------------------------------*/
-
-module "redirect" {
-  source    = "./modules/cloud-flare-rules"
-  redirects = local.dns_redirects
-}

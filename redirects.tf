@@ -14,3 +14,8 @@ locals {
     },
   ]
 }
+
+module "redirect" {
+  source    = "./modules/cloud-flare-rules"
+  redirects = local.dns_redirects
+}
