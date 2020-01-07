@@ -6,6 +6,21 @@ provider "cloudflare" {
   api_key = var.cloudflare_token
 }
 
+/* CF Zones ------------------------------------*/
+
+/* CloudFlare Zone IDs required for records */
+data "cloudflare_zones" "active" {
+  filter { status = "active" }
+}
+
+/* For easier access to zone ID by domain name */
+locals {
+  zones = {
+    for zone in data.cloudflare_zones.active.zones:
+      zone.name => zone.id
+  }
+}
+
 /* DNS Records ---------------------------------*/
 
 resource "cloudflare_record" "dns_records" {

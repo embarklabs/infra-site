@@ -2,7 +2,7 @@ locals {
   dns_records = [
     /* ENS entries */
     {
-      zone = var.zones["embark.team"],
+      zone = local.zones["embark.team"],
       type = "TXT",
       name = "_ens",
       dest = "a=0x2500d3147595331F833600a04211a62eBdCDfdcb",
@@ -11,13 +11,13 @@ locals {
 
   dns_redirects = [
     {
-      zone = var.zones["embark.team"],
+      zone = local.zones["embark.team"],
       fqdn = "embark.team",
       dest = "embark.status.im",
       url  = "https://embark.status.im/",
     },
     {
-      zone = var.zones["embarklabs.io"],
+      zone = local.zones["embarklabs.io"],
       fqdn = "embarklabs.io",
       dest = "embark.status.im",
       url  = "https://embark.status.im/",
