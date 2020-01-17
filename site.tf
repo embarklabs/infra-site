@@ -18,8 +18,16 @@ resource "cloudflare_record" "main" {
   proxied = true
 }
 
+resource "cloudflare_record" "main_site_www" {
+  zone_id = local.zones["embarklabs.io"]
+  type    = "CNAME"
+  name    = "www"
+  value   = "embarklabs.io"
+  proxied = false
+}
+
 /* Force HTTPS */
-resource "cloudflare_page_rule" "main_site_force_ssl" {
+resource "cloudflare_page_rule" "main_force_ssl" {
   zone_id  = local.zones["embarklabs.io"]
   target   = "embarklabs.io/*"
 
