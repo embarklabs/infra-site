@@ -17,3 +17,13 @@ resource "cloudflare_record" "main" {
   value   = local.github_pages_ips[count.index]
   proxied = true
 }
+
+/* Force HTTPS */
+resource "cloudflare_page_rule" "main_site_force_ssl" {
+  zone_id  = local.zones["embarklabs.io"]
+  target   = "embarklabs.io/*"
+
+  actions {
+    always_use_https = true
+  }
+}
