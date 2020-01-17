@@ -14,6 +14,6 @@ resource "cloudflare_record" "blog" {
   zone_id = local.zones["embarklabs.io"]
   type    = "A"
   name    = "@"
-  value   = "embarklabs.github.io"
+  value   = local.github_pages_ips[count.index]
   proxied = true
 }
