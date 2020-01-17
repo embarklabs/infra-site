@@ -9,7 +9,7 @@ locals {
   ]
 }
 
-resource "cloudflare_record" "main" {
+resource "cloudflare_record" "main_site" {
   count   = length(local.github_pages_ips)
   zone_id = local.zones["embarklabs.io"]
   type    = "A"
@@ -27,7 +27,7 @@ resource "cloudflare_record" "main_site_www" {
 }
 
 /* Force HTTPS */
-resource "cloudflare_page_rule" "main_force_ssl" {
+resource "cloudflare_page_rule" "main_site_force_ssl" {
   zone_id  = local.zones["embarklabs.io"]
   target   = "embarklabs.io/*"
 

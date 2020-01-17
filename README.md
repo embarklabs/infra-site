@@ -21,3 +21,7 @@ Then you can apply the setup in this repo using:
 ```
 terraform apply
 ```
+
+# TODO
+
+Need to move `terraform.tfstate` somewhere else. While it's just DNS records there's no harm, just makes Git diffs ugly.
