@@ -10,10 +10,9 @@ locals {
 }
 
 resource "cloudflare_record" "blog" {
-  count   = length(local.github_pages_ips)
   zone_id = local.zones["embarklabs.io"]
-  type    = "A"
+  type    = "CNAME"
   name    = "blog"
-  value   = local.github_pages_ips[count.index]
+  value   = "embarklabs.github.io"
   proxied = true
 }
