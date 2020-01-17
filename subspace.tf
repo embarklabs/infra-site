@@ -1,10 +1,9 @@
 /* Source of the blog: https://github.com/embarklabs/subspace-site */
 
 resource "cloudflare_record" "subspace" {
-  count   = length(local.github_pages_ips)
   zone_id = local.zones["embarklabs.io"]
-  type    = "A"
+  type    = "CNAME"
   name    = "subspace"
-  value   = local.github_pages_ips[count.index]
+  value   = "embarklabs.github.io"
   proxied = true
 }
