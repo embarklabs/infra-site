@@ -23,7 +23,7 @@ resource "cloudflare_record" "main_site_www" {
   type    = "CNAME"
   name    = "www"
   value   = "embarklabs.io"
-  proxied = false
+  proxied = true
 }
 
 /* Force HTTPS */
