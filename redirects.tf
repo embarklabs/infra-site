@@ -5,7 +5,7 @@ locals {
       fqdn = "embark.team",
       dest = "embark.status.im",
       url  = "https://embark.status.im/",
-    }
+    },
   ]
 }
 

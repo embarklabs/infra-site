@@ -29,7 +29,7 @@ resource "cloudflare_record" "main_site_www" {
 /* Force HTTPS */
 resource "cloudflare_page_rule" "main_site_force_ssl" {
   zone_id  = local.zones["embarklabs.io"]
-  target   = "embarklabs.io/*"
+  target   = "*embarklabs.io/*"
 
   actions {
     always_use_https = true
